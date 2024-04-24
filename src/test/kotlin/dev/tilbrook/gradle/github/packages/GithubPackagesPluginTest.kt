@@ -52,9 +52,8 @@ class GithubPackagesPluginTest {
   }
 
   @Test
-  @Ignore("Can't run on M1 mac. Remove once Linux test runner is setup")
   fun `allprojects is used when using gradle lesser than 6_8`() {
-    val version = GradleVersion.version("7.0")
+    val version = GradleVersion.version("6.7")
     buildFile.writeText(allProjectsSetup())
     val runner = runGradle(version).build()
 
